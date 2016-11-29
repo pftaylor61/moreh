@@ -11,6 +11,85 @@
  *
  * @since Moreh 0.0.1
  */
+
+/*
+ * Include important plugins
+ */
+require_once('tgm/class-tgm-plugin-activation.php');
+add_action( 'tgmpa_register', 'ocwsmh__register_required_plugins' );
+
+function ocwsmh__register_required_plugins() {
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+            
+            // GitHub Updater - to keep my GitHub plugins up to date
+            array(
+			'name'      => 'GitHub Updater',
+			'slug'      => 'github-updater',
+			'source'    => 'https://github.com/afragen/github-updater/archive/develop.zip',
+                        'required'  => true,
+            ),
+            
+            // GitHub Link - to indicate where updates come from
+            array(
+			'name'      => 'GitHub Link',
+			'slug'      => 'github-link',
+			'source'    => 'https://github.com/szepeviktor/github-link/archive/master.zip',
+            ),
+            
+            // OCWS Admin Bar - make sure the OCWS links are present
+            array(
+			'name'      => 'OCWS Admin Bar',
+			'slug'      => 'ocws-admin-bar',
+			'source'    => 'https://github.com/pftaylor61/ocws-admin-bar/archive/master.zip',
+            ),
+            
+            // OCWS Admin Bar Greeting - make sure we have a sensible greeting
+            array(
+			'name'      => 'OCWS Admin Bar Greeting',
+			'slug'      => 'ocws-admin-bar-greeting',
+			'source'    => 'https://github.com/pftaylor61/ocws-admin-bar-greeting/archive/master.zip',
+            ),
+            
+            // Embed Any Document - so that worksheets can be included
+            array(
+			'name'      => 'Embed Any Document',
+			'slug'      => 'embed-any-document',
+			'required'  => true,
+            ),
+            
+            // Login Logo - so that we can include our own logo for logging in
+            array(
+			'name'      => 'Login Logo',
+			'slug'      => 'login-logo',
+			'required'  => false,
+            ),
+            
+            // Video Background - the theme uses a video background, so this plugin is essential
+            array(
+			'name'      => 'Video Background',
+			'slug'      => 'video-background',
+			'required'  => true,
+            ),
+            
+            // LearnPress - the whole point of this theme is to use Learnpress
+            array(
+			'name'      => 'LearnPress',
+			'slug'      => 'learnpress',
+			'required'  => true,
+            ),
+            
+            
+            
+    );    
+            
+	tgmpa( $plugins, $config );
+}
+
+
 if ( ! isset( $content_width ) )
 	$content_width = 790; /* Default the embedded content width to 790px */
 
@@ -388,7 +467,7 @@ function moreh_scripts_styles() {
 
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array( 'normalize' ), '4.2.0', 'all' );
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' , array( 'normalize' ), '4.7.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
 	// Our styles for setting up the grid.
@@ -874,9 +953,11 @@ if ( ! function_exists( 'moreh_get_social_media' ) ) {
 			array( 'url' => of_get_option( 'social_bitbucket', '' ), 'icon' => 'fa-bitbucket', 'title' => esc_html__( 'Fork me on Bitbucket', 'moreh' ) ),
 			array( 'url' => of_get_option( 'social_foursquare', '' ), 'icon' => 'fa-foursquare', 'title' => esc_html__( 'Follow me on Foursquare', 'moreh' ) ),
 			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'fa-youtube', 'title' => esc_html__( 'Subscribe to me on YouTube', 'moreh' ) ),
+                        array( 'url' => of_get_option( 'social_vimeo', '' ), 'icon' => 'fa-vimeo', 'title' => esc_html__( 'Visit our Vimeo channel', 'moreh' ) ),
 			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'fa-instagram', 'title' => esc_html__( 'Follow me on Instagram', 'moreh' ) ),
 			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'fa-flickr', 'title' => esc_html__( 'Connect with me on Flickr', 'moreh' ) ),
 			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'fa-pinterest', 'title' => esc_html__( 'Follow me on Pinterest', 'moreh' ) ),
+                        array( 'url' => of_get_option( 'social_external', '' ), 'icon' => 'fa-external-link ', 'title' => esc_html__( 'Visit our Main Website', 'moreh' ) ),
 			array( 'url' => of_get_option( 'social_rss', '' ), 'icon' => 'fa-rss', 'title' => esc_html__( 'Subscribe to my RSS Feed', 'moreh' ) )
 		);
 

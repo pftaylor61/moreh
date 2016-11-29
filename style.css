@@ -4,7 +4,7 @@ Theme URI: http://www.oldcastleweb.com/pws/themes/moreh/
 Author: Paul Taylor
 Author URI: http://www.oldcastleweb.com
 Description: Moreh is a fully responsive theme for Wordpress, based on my foundation theme, Qohelet. It has been designed with educational websites in mind, and works well with the LearnPress LMS (Learning Management System). Like Qohelet, it has been built on the shoulders of giants, utilizing a number of other technologies, such as: 1. The Quark starter theme by Anthony Horton. 2. Quark is in turn built upon Underscores by Automattix. 3. Quark utilizes Normalize, Modernizr and Options Framework. 4. Many other smaller amounts of other technologies have been incorporated, so that I did not re-invent the wheel.
-Version: 0.2
+Version: 0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -803,7 +803,7 @@ select {
 	margin: 0 auto;
 	padding: 15px 0;
 	padding: 0.9375rem 0;
-	min-height: 75px;
+	min-height: 110px;
 }
 
 .home .banner .widget {
@@ -2496,6 +2496,14 @@ h1.page-title {
 #course-curriculum-popup #popup-main #popup-header {
     background-color: #208294 !important;
     background-image: url("images/space_castle1000.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    
+}
+
+#secondary {
+    background-color: #dddddd !important;
+    background-image: url("images/unibg.jpg") !important;
     background-repeat: no-repeat !important;
     background-size: 100% !important;
     

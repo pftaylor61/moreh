@@ -170,6 +170,13 @@ function optionsframework_options() {
 		'id' => 'social_youtube',
 		'std' => '',
 		'type' => 'text' );
+        
+        $options[] = array(
+		'name' => esc_html__( 'Vimeo', 'moreh' ),
+		'desc' => esc_html__( 'Enter your Vimeo URL.', 'moreh' ),
+		'id' => 'social_vimeo',
+		'std' => '',
+		'type' => 'text' );
 
 	$options[] = array(
 		'name' => esc_html__( 'Instagram', 'moreh' ),
@@ -189,6 +196,13 @@ function optionsframework_options() {
 		'name' => esc_html__( 'Pinterest', 'moreh' ),
 		'desc' => esc_html__( 'Enter your Pinterest URL.', 'moreh' ),
 		'id' => 'social_pinterest',
+		'std' => '',
+		'type' => 'text' );
+        
+        $options[] = array(
+		'name' => esc_html__( 'External', 'moreh' ),
+		'desc' => esc_html__( 'Enter your Website URL.', 'moreh' ),
+		'id' => 'social_external',
 		'std' => '',
 		'type' => 'text' );
 
@@ -287,7 +301,7 @@ add_action( 'optionsframework_after','moreh_options_display_sidebar' );
 function moreh_options_display_sidebar() { 
         // replaceable variables
         $ocws_theme_screenshot_thumb = "moreh400.png";
-        $ocws_theme_op_text = "<p><strong>Moreh</strong> is a fully responsive theme for Wordpress. It has been built on the shoulders of giants, utilizing a number of other technologies, such as: 1. The Quark starter theme by Anthony Horton. 2. Quark is in turn built upon Underscores by Automattix. 3. Quark utilizes Normalize, Modernizr and Options Framework. 4. Many other smaller amounts of other technologies have been incorporated, so that I did not re-invent the wheel.</p>";
+        $ocws_theme_op_text = "<p><strong>Moreh</strong> is a fully responsive theme for Wordpress, based on my foundational Qohelet. Like Qohelet, it has been built on the shoulders of giants, utilizing a number of other technologies, such as: 1. The Quark starter theme by Anthony Horton. 2. Quark is in turn built upon Underscores by Automattix. 3. Quark utilizes Normalize, Modernizr and Options Framework. 4. Many other smaller amounts of other technologies have been incorporated, so that I did not re-invent the wheel. The theme is designed to work with LMS (Learning Management System) sites, and itegrates well with Learnpress.<br /><br />The word <em>moreh</em> (<strong>מוֹרֶה</strong>) means <em>teacher</em> in Hebrew.</p>";
         
 	 ?>
         <div id="optionsframework-sidebar">

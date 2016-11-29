@@ -71,10 +71,18 @@
 		</header> <!-- /#masthead.site-header.row -->
 
 	</div> <!-- /#headercontainer -->
-	<div id="bannercontainer">
+	<div id="bannercontainer" class="bannercontainerclass">
+            <?php // echo ocwssl_function('ocwssl_function'); ?>
+            <?php echo do_shortcode('[vidbg container=".bannercontainerclass" mp4="'.get_template_directory_uri().'/videos/videobg.mp4" webm="'.get_template_directory_uri().'/videos/videobg.webm" poster="'.get_template_directory_uri().'/videos/videobg_altimg.jpg" loop="true" overlay="false" overlay_color="#000" overlay_alpha="0.3" muted="true"]'); ?>
 		<div class="banner row">
 			<?php if ( is_front_page() ) {
-				// Count how many banner sidebars are active so we can work out how many containers we need
+				
+                            
+/*
+ * Everything in this section being commented out
+
+
+                                // Count how many banner sidebars are active so we can work out how many containers we need
 				$bannerSidebars = 0;
 				for ( $x=1; $x<=2; $x++ ) {
 					if ( is_active_sidebar( 'frontpage-banner' . $x ) ) {
@@ -100,6 +108,8 @@
 					} ?>
 
 				<?php }
+ * 
+ */
 			} ?>
 		</div> <!-- /.banner.row -->
 	</div> <!-- /#bannercontainer -->
